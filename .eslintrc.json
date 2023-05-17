@@ -1,0 +1,32 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "node": true,
+        "react-native/react-native": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "standard"
+    ],
+    "overrides": [
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "plugins": [
+        "react",
+        "react-native"
+    ],
+    "rules": {
+        "import/no-unresolved": "error",
+        "import/default": "error",
+        "import/named": "error",
+        "import/namespace": "error",
+        "import/no-unused-modules": "error"
+    }
+}

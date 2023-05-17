@@ -1,29 +1,25 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { quotes } from './data/quotes';
-import { generateRand } from './utils/numberGenerator';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import DailyEntryScreen from './screens/DailyEntryScreen';
+import ToolsScreen from './screens/ToolsScreen';
+import ProfileScreen from './screens/ProfileScreen';
+import HomeScreen from './screens/HomeScreen';
+
+const Tab = createBottomTabNavigator();
 
 export default function App() {
-  const name = "JP"
-  const quote = quotes[generateRand(quotes.length)]
-  
-  return (
-    <View style={styles.container}>
-      <Text>Hi {name}</Text>
-      <Text>Get Better Daily.</Text>
-      <Text>{quote.text}</Text>
-      <Text>{quote.author}</Text>
 
-      <StatusBar style="auto" />
-    </View>
+
+  return (
+    <NavigationContainer>
+          <Tab.Navigator>
+            <Tab.Screen name="Home" component={HomeScreen} />
+            <Tab.Screen name="Daily Entry" component={DailyEntryScreen} />
+            <Tab.Screen name="Tools" component={ToolsScreen} />
+            <Tab.Screen name="Profile" component={ProfileScreen} />
+          </Tab.Navigator>
+        <StatusBar style="auto" />
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
