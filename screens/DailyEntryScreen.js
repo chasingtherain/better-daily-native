@@ -4,7 +4,6 @@ import { Button, StyleSheet, Text, TextInput, ScrollView, View } from 'react-nat
 
 export default function DailyEntryScreen() {
     const [currentPage, setCurrentPage] = useState(0)
-    console.log(currentPage)
 
     const handlePrev = () => {
         setCurrentPage(prevPage => prevPage - 1);
@@ -16,7 +15,6 @@ export default function DailyEntryScreen() {
 
     return (
         <ScrollView style={styles.container}>
-            <Text>current page: {currentPage}</Text>
             {
             currentPage == 0 &&
             (<>
