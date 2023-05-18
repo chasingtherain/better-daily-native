@@ -14,7 +14,7 @@ const HomeStack = createStackNavigator();
 const HomeStackNavigator = () => {
   return (
     <HomeStack.Navigator>
-      <HomeStack.Screen name="Home" component={HomeScreen} />
+      <HomeStack.Screen name="Welcome Back" component={HomeScreen} />
       <HomeStack.Screen name="Daily Entry" component={DailyEntryScreen} />
     </HomeStack.Navigator>
   );
